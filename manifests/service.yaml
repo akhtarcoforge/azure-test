@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: aks-test
+  name: build-push-acr
   namespace: dev
   labels:
-    app.kubernetes.io/name: aks-test
+    app.kubernetes.io/name: build-push-acr
     kubernetes.azure.com/generator: devhub
 spec:
   type: LoadBalancer
   selector:
-    app.kubernetes.io/name: aks-test
+    app.kubernetes.io/name: build-push-acr
   ports:
     - protocol: TCP
       port: 80
