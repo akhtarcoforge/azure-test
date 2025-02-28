@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aks-test
+  namespace: dev
+  labels:
+    app.kubernetes.io/name: aks-test
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: aks-test
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
